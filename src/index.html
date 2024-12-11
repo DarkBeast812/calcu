@@ -34,6 +34,7 @@
                                 <button type="button" class="btn btn-light w-100 mt-2 border">AC</button>
                             </div>
 
+
                             <div class="col-3">
                                 <button type="button" class="btn btn-light w-100 mt-2 border">7</button>
                             </div>
@@ -46,6 +47,7 @@
                             <div class="col-3">
                                 <button type="button" class="btn btn-light w-100 mt-2 border">÷</button>
                             </div>
+
 
                             <div class="col-3">
                                 <button type="button" class="btn btn-light w-100 mt-2 border">4</button>
@@ -60,6 +62,7 @@
                                 <button type="button" class="btn btn-light w-100 mt-2 border">×</button>
                             </div>
 
+
                             <div class="col-3">
                                 <button type="button" class="btn btn-light w-100 mt-2 border">1</button>
                             </div>
@@ -72,6 +75,7 @@
                             <div class="col-3">
                                 <button type="button" class="btn btn-light w-100 mt-2 border">-</button>
                             </div>
+
 
                             <div class="col-3">
                                 <button type="button" class="btn btn-light w-100 mt-2 border">0</button>
@@ -86,8 +90,37 @@
                             <div class="col-3">
                                 <button type="button" class="btn btn-light w-100 mt-2 border">+</button>
                             </div>
-                        </div>
 
+
+                            <div class="col-3">
+                                <button type="button" class="btn btn-light w-100 mt-2 border">sin</button>
+                            </div>
+                            <div class="col-3">
+                                <button type="button" class="btn btn-light w-100 mt-2 border">ln</button>
+                            </div>
+                            <div class="col-3">
+                                <button type="button" class="btn  w-100 mt-2 border btn-light">π</button>
+                            </div>
+                            <div class="col-3">
+                                <button type="button" class="btn btn-light w-100 mt-2 border">cos</button>
+                            </div>
+
+
+                            <div class="col-3">
+                                <button type="button" class="btn btn-light w-100 mt-2 border">log</button>
+                            </div>
+                            <div class="col-3">
+                                <button type="button" class="btn btn-light w-100 mt-2 border">e</button>
+                            </div>
+                            <div class="col-3">
+                                <button type="button" class="btn  w-100 mt-2 border btn-light">tan</button>
+                            </div>
+                            <div class="col-3">
+                                <button type="button" class="btn btn-light w-100 mt-2 border">√</button>
+                            </div>
+
+
+                        </div>
                     </div>
                 </div>
             </div>
@@ -96,41 +129,6 @@
             integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
             crossorigin="anonymous"></script>
 </body>
-<script>
-    document.addEventListener("DOMContentLoaded",function(){
-        const display=document.getElementById('calc-display');
-        const buttons =document.getElementsByClassName('btn');
-
-        let currentValue ="";
-        function evaluateResult(){
-            console.log('currentValue:',currentValue);
-            const convertedValue=currentValue
-            .replace("×","*")
-            .replace("÷","/")
-            .replace('%','*0.01');
-
-            console.log('convertedValue:',convertedValue)
-            const result=eval(convertedValue);
-            currentValue=result.toString();
-            display.value=currentValue;
-        }
-
-        for(let i=0; i<buttons.length; i++ ){
-            const button =buttons[i];
-            button.addEventListener('click',function(){
-                const value=button.innerText;
-                if(value=="AC"){
-                    currentValue="";
-                    display.value=currentValue;
-                }else if(value=="="){
-                    evaluateResult();
-                }else{
-                    currentValue += value;
-                    display.value=currentValue;
-                }
-            })
-        }
-    });    
-</script>
+<script src="script.js"></script>
 
 </html>
